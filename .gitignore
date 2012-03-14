@@ -1,0 +1,14 @@
+autom4te.cache
+*.in
+config.*
+compile
+*.m4
+configure
+depcomp
+*.info
+mdate-sh
+stamp-vti
+texinfo.tex
+version.texi
+install-sh
+missing
