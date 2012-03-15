@@ -82,7 +82,13 @@
     while (i > 0) {
         NSArray *argval = [[argv objectAtIndex:(self.argc - i)] componentsSeparatedByString:@"="];
         NSString *key = [argval objectAtIndex:0];
-        NSString *val = [argval objectAtIndex:1];
+        NSString *val = nil;
+
+        if ([argval count] == 1)
+            val = @"true";
+        else
+            val = [argval objectAtIndex:1];
+
         NSString *type = [self getType:val];
 
         if (NSOrderedSame == [@"boolean" localizedCaseInsensitiveCompare:type])
