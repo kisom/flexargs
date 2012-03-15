@@ -38,7 +38,7 @@
                               [NSNumber numberWithDouble:-2.5], @"quux",
                               @"footastic", @"spam",
                               [NSNumber numberWithBool:false], @"eggs", nil];
-    DNFlexArgs *flexArgs = [[DNFlexArgs alloc] initParserWithNSArray:testArgs];
+    FlexArgs *flexArgs = [[FlexArgs alloc] initParserWithNSArray:testArgs];
     NSDictionary *parsed = [flexArgs retrieveArgs];
     
     STAssertTrue([parsed isEqualToDictionary:expected], 
@@ -53,10 +53,10 @@
                          @"quux=-2.5",
                          @"spam=footastic",
                          @"eggs=false", nil];    
-    DNFlexArgs *flexInstance = [[DNFlexArgs alloc] initParserWithNSArray:testArgs];
+    FlexArgs *flexInstance = [[FlexArgs alloc] initParserWithNSArray:testArgs];
     NSDictionary *instanceDictionary = [flexInstance retrieveArgs];
     
-    NSDictionary *classDictionary = [[DNFlexArgs parserWithNSArray:testArgs] retrieveArgs];
+    NSDictionary *classDictionary = [[FlexArgs parserWithNSArray:testArgs] retrieveArgs];
     
     STAssertTrue([classDictionary isEqualToDictionary:instanceDictionary],
                  @"Class NSDictionary failed to match instance NSDictionary!");
