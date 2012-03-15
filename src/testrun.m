@@ -11,31 +11,22 @@
 #import <Foundation/Foundation.h>
 #import "FlexArgs.h"
 
+BOOL test_init_with_NSArray(void);              // verify initWithNSArray
+BOOL test_instance_matches_class(void);         // verify initWithNSArray matches parserWithNSArray
+
 int main(int argc, char *argv[])
 {
-    NSLog(@"number of args: %d\n", argc);
-
     // skip the binary name
     argc--;
     argv++;
-    NSLog(@"actual number of args: %d\n\n", argc);
-
-    NSLog(@"argument list:\n");
-    for (int i = 0; i < argc; ++i)
-        NSLog(@"arg %d: %s\n", i, argv[i]);
+    NSLog(@"testing FlexArgs...\n");
 
     @autoreleasepool {
-        FlexArgs *flexArgsCL = [[FlexArgs alloc] initParser:argv nargs:argc];
-        NSDictionary *argsCL = [flexArgsCL retrieveArgs];
-        NSDictionary *argsTA = [flexArgsTA retrieveArgs];
+        NSLog(@"testing initialisation with NSArray...\n");
+        assert(test_init_with_NSArray());
 
-        FlexArgs *flexArgsCITA = [FlexArgs parserWithNSArray:testArgs];
-        NSDictionary *argsTA2 = [flexArgsCITA retrieveArgs];
-
-        [argsCL writeToFile:@"resultsCL.txt" atomically:YES];
-        [argsTA writeToFile:@"resultsTA.txt" atomically:YES];
-        assert([argsTA isEqualToDictionary:argsTA2]);
-    
+        NSLog(@"testing instance initialisation matches class...\n");
+        assert(test_instance_matches_class());
     }
     return 0;
 }
@@ -48,5 +39,30 @@ BOOL test_init_with_NSArray()
                             @"quux=-2.5",
                             @"spam=footastic",
                             @"eggs=false", nil];
-    FlexArgs *flexArgsCL = [[FlexArgs alloc] initParser:argv nargs:argc];
+    NSDictionary *expected = [NSDictionary dictionaryWithObjectsAndKeys:
+                                @"bar", @"foo",
+                                [NSNumber numberWithLongLong:1], @"baz",
+                                [NSNumber numberWithDouble:-2.5], @"quux",
+                                @"footastic", @"spam",
+                                [NSNumber numberWithBool:false], @"eggs", nil];
+    FlexArgs *flexArgs = [[FlexArgs alloc] initParserWithNSArray:testArgs];
+    NSDictionary *parsed = [flexArgs retrieveArgs];
+
+    return [parsed isEqualToDictionary:expected];
+}
+
+BOOL test_instance_matches_class()
+{
+    NSArray *testArgs = [NSArray arrayWithObjects:
+                            @"foo=bar",
+                            @"baz=1",
+                            @"quux=-2.5",
+                            @"spam=footastic",
+                            @"eggs=false", nil];    
+    FlexArgs *flexInstance = [[FlexArgs alloc] initParserWithNSArray:testArgs];
+    NSDictionary *instanceDictionary = [flexInstance retrieveArgs];
+
+    NSDictionary *classDictionary = [[FlexArgs parserWithNSArray:testArgs] retrieveArgs];
+
+    return [classDictionary isEqualToDictionary:instanceDictionary];
 }
