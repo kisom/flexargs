@@ -60,19 +60,20 @@
     NSScanner *intScanner = [NSScanner localizedScannerWithString:value];
     NSScanner *hexIntScanner = [NSScanner localizedScannerWithString:value];
 
-    if (value == nil)
+    if (value == nil) {
         return @"nil";
-    else if ((NSOrderedSame == [value localizedCaseInsensitiveCompare:@"true"]) ||
-             (NSOrderedSame == [value localizedCaseInsensitiveCompare:@"false"]))
+    } else if ((NSOrderedSame == [value localizedCaseInsensitiveCompare:@"true"]) ||
+               (NSOrderedSame == [value localizedCaseInsensitiveCompare:@"false"])) {
         return @"boolean";
-    else if (([intScanner scanInt:NULL]) && ([intScanner isAtEnd]))
+    } else if (([intScanner scanInt:NULL]) && ([intScanner isAtEnd])) {
         return @"integer";
-    else if (([hexIntScanner scanHexLongLong:NULL]) && ([hexIntScanner isAtEnd]))
+    } else if (([hexIntScanner scanHexLongLong:NULL]) && ([hexIntScanner isAtEnd])) {
         return @"integer";
-    else if ([[NSScanner localizedScannerWithString:value] scanDouble:NULL])
+    } else if ([[NSScanner localizedScannerWithString:value] scanDouble:NULL]) {
         return @"float";
-    else 
+    } else {
         return @"string";
+    }
 }
 
 -(void)parse
@@ -84,21 +85,25 @@
         NSString *key = [argval objectAtIndex:0];
         NSString *val = nil;
 
-        if ([argval count] == 1)
+        if ([argval count] == 1) {
             val = @"true";
-        else
+        } else {
             val = [argval objectAtIndex:1];
+        }
 
         NSString *type = [self getType:val];
 
-        if (NSOrderedSame == [@"boolean" localizedCaseInsensitiveCompare:type])
+        if (NSOrderedSame == [@"boolean" localizedCaseInsensitiveCompare:type]) {
             [self addBooleanArg:key booleanArg:val];
-        else if (NSOrderedSame == [@"integer" localizedCaseInsensitiveCompare:type])
+        } else if (NSOrderedSame == [@"integer" localizedCaseInsensitiveCompare:type]) {
             [self addIntegerArg:key integerArg:val];
-        else if (NSOrderedSame == [@"float" localizedCaseInsensitiveCompare:type])
+        } else if (NSOrderedSame == [@"float" localizedCaseInsensitiveCompare:type]) {
             [self addFloatArg:key floatArg:val];
-        else if (NSOrderedSame == [@"string" localizedCaseInsensitiveCompare:type])
+        } else if (NSOrderedSame == [@"string" localizedCaseInsensitiveCompare:type]) {
             [self addStringArg:key stringArg:val];
+        } else {
+            assert(false);  // should not be here
+        }
 
         --i;
     }
@@ -109,12 +114,13 @@
     int i = 0;
 
     self = [super init];
-    if (!self)
+    if (!self) {
         return self;
-
+    }
+    
     self.argc = nargs;
     self.argv = [NSMutableArray arrayWithCapacity:(self.argc + 1)];
-    while (i < nargs){
+    while (i < nargs) {
         [self.argv addObject:[NSString stringWithUTF8String:inargv[i]]];
         i++;
     }
@@ -128,9 +134,10 @@
 -(id)initParserWithNSArray:(NSArray *)inargv
 {
     self = [super init];
-    if (!self)
+    if (!self) {
         return self;
-
+    }
+    
     self.argc = [inargv count];
     self.argv = [NSArray arrayWithArray:inargv];
     self.args = [NSMutableDictionary dictionaryWithCapacity:(self.argc + 1)];
