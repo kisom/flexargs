@@ -10,6 +10,7 @@
 //  CLI test code.
 
 #import <Foundation/Foundation.h>
+
 @interface FlexArgs : NSObject
 {
     NSMutableDictionary *args;
