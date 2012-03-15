@@ -15,7 +15,7 @@ and return an NSDictionary with those values.
 ```objc
 
 #import <Foundation/Foundation.h>
-#import "FlexArgs.h"
+#import "DNFlexArgs.h"
 
 int main(int argc, char *argv[])
 {
@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
         argc--;     // skip the first arg, which contains the binary name
         argv++;
 
-        NSDictionary *argumentDict = [[FlexArgs parserWithArgv:argv nargs:argc] retrieveArgs];
+        NSDictionary *argumentDict = [[DNFlexArgs parserWithArgv:argv nargs:argc] retrieveArgs];
         NSLog(@"argumentDict = %@", argumentDict);
     }
 

@@ -10,12 +10,12 @@
 		2767558815122355003DCB76 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2767558715122355003DCB76 /* Foundation.framework */; };
 		2767558B15122355003DCB76 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2767558A15122355003DCB76 /* main.m */; };
 		2767558F15122355003DCB76 /* FlexArgs.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2767558E15122355003DCB76 /* FlexArgs.1 */; };
-		276755971512236C003DCB76 /* FlexArgs.m in Sources */ = {isa = PBXBuildFile; fileRef = 276755961512236C003DCB76 /* FlexArgs.m */; };
+		276755971512236C003DCB76 /* DNFlexArgs.m in Sources */ = {isa = PBXBuildFile; fileRef = 276755961512236C003DCB76 /* DNFlexArgs.m */; };
 		276755B215122FF9003DCB76 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 276755B115122FF9003DCB76 /* SenTestingKit.framework */; };
 		276755B415122FF9003DCB76 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 276755B315122FF9003DCB76 /* Cocoa.framework */; };
 		276755BE15122FF9003DCB76 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 276755BC15122FF9003DCB76 /* InfoPlist.strings */; };
-		276755C115122FF9003DCB76 /* FlexArgsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 276755C015122FF9003DCB76 /* FlexArgsTest.m */; };
-		276755C91512328C003DCB76 /* FlexArgs.m in Sources */ = {isa = PBXBuildFile; fileRef = 276755961512236C003DCB76 /* FlexArgs.m */; };
+		276755C115122FF9003DCB76 /* DNFlexArgsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 276755C015122FF9003DCB76 /* DNFlexArgsTest.m */; };
+		276755C91512328C003DCB76 /* DNFlexArgs.m in Sources */ = {isa = PBXBuildFile; fileRef = 276755961512236C003DCB76 /* DNFlexArgs.m */; };
 		276755CB15123725003DCB76 /* libprofile_rt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 276755CA15123725003DCB76 /* libprofile_rt.dylib */; };
 		276755CC151237B9003DCB76 /* libprofile_rt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 276755CA15123725003DCB76 /* libprofile_rt.dylib */; };
 /* End PBXBuildFile section */
@@ -39,8 +39,8 @@
 		2767558A15122355003DCB76 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2767558D15122355003DCB76 /* FlexArgs-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlexArgs-Prefix.pch"; sourceTree = "<group>"; };
 		2767558E15122355003DCB76 /* FlexArgs.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = FlexArgs.1; sourceTree = "<group>"; };
-		276755951512236C003DCB76 /* FlexArgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlexArgs.h; sourceTree = "<group>"; };
-		276755961512236C003DCB76 /* FlexArgs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlexArgs.m; sourceTree = "<group>"; };
+		276755951512236C003DCB76 /* DNFlexArgs.h */ = {isa = PBXFileReference; fileEncoding = 4; path = DNFlexArgs.h; sourceTree = "<group>"; };
+		276755961512236C003DCB76 /* DNFlexArgs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNFlexArgs.m; sourceTree = "<group>"; };
 		276755A515122410003DCB76 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		276755B015122FF9003DCB76 /* FlexArgsTest.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlexArgsTest.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		276755B115122FF9003DCB76 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -50,8 +50,8 @@
 		276755B815122FF9003DCB76 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		276755BB15122FF9003DCB76 /* FlexArgsTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FlexArgsTest-Info.plist"; sourceTree = "<group>"; };
 		276755BD15122FF9003DCB76 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		276755BF15122FF9003DCB76 /* FlexArgsTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlexArgsTest.h; sourceTree = "<group>"; };
-		276755C015122FF9003DCB76 /* FlexArgsTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlexArgsTest.m; sourceTree = "<group>"; };
+		276755BF15122FF9003DCB76 /* DNFlexArgsTest.h */ = {isa = PBXFileReference; path = DNFlexArgsTest.h; sourceTree = "<group>"; };
+		276755C015122FF9003DCB76 /* DNFlexArgsTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNFlexArgsTest.m; sourceTree = "<group>"; };
 		276755C215122FF9003DCB76 /* FlexArgsTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlexArgsTest-Prefix.pch"; sourceTree = "<group>"; };
 		276755CA15123725003DCB76 /* libprofile_rt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libprofile_rt.dylib; path = Toolchains/XcodeDefault.xctoolchain/usr/lib/libprofile_rt.dylib; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
@@ -114,8 +114,8 @@
 		2767558915122355003DCB76 /* FlexArgs */ = {
 			isa = PBXGroup;
 			children = (
-				276755951512236C003DCB76 /* FlexArgs.h */,
-				276755961512236C003DCB76 /* FlexArgs.m */,
+				276755951512236C003DCB76 /* DNFlexArgs.h */,
+				276755961512236C003DCB76 /* DNFlexArgs.m */,
 				2767558A15122355003DCB76 /* main.m */,
 				2767558E15122355003DCB76 /* FlexArgs.1 */,
 				2767558C15122355003DCB76 /* Supporting Files */,
@@ -144,8 +144,8 @@
 		276755B915122FF9003DCB76 /* FlexArgsTest */ = {
 			isa = PBXGroup;
 			children = (
-				276755BF15122FF9003DCB76 /* FlexArgsTest.h */,
-				276755C015122FF9003DCB76 /* FlexArgsTest.m */,
+				276755BF15122FF9003DCB76 /* DNFlexArgsTest.h */,
+				276755C015122FF9003DCB76 /* DNFlexArgsTest.m */,
 				276755BA15122FF9003DCB76 /* Supporting Files */,
 			);
 			path = FlexArgsTest;
@@ -258,7 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2767558B15122355003DCB76 /* main.m in Sources */,
-				276755971512236C003DCB76 /* FlexArgs.m in Sources */,
+				276755971512236C003DCB76 /* DNFlexArgs.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,8 +266,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				276755C91512328C003DCB76 /* FlexArgs.m in Sources */,
-				276755C115122FF9003DCB76 /* FlexArgsTest.m in Sources */,
+				276755C91512328C003DCB76 /* DNFlexArgs.m in Sources */,
+				276755C115122FF9003DCB76 /* DNFlexArgsTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +426,7 @@
 				276755C415122FF9003DCB76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
