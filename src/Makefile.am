@@ -1,5 +1,4 @@
 # automake source for flexargs
-AM_OBJCFLAGS = -framework Foundation
-# include_HEADERS = FlexArgs.h
+AM_LDFLAGS = -framework Foundation
 check_PROGRAMS = testrun
 testrun_SOURCES = FlexArgs.m FlexArgsTests.m testrun.m
