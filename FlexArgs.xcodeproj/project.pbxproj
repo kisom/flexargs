@@ -18,6 +18,7 @@
 		276755C91512328C003DCB76 /* DNFlexArgs.m in Sources */ = {isa = PBXBuildFile; fileRef = 276755961512236C003DCB76 /* DNFlexArgs.m */; };
 		276755CB15123725003DCB76 /* libprofile_rt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 276755CA15123725003DCB76 /* libprofile_rt.dylib */; };
 		276755CC151237B9003DCB76 /* libprofile_rt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 276755CA15123725003DCB76 /* libprofile_rt.dylib */; };
+		27E6844C151252A200898775 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 27E6844B151252A200898775 /* LICENSE */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,7 +40,7 @@
 		2767558A15122355003DCB76 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2767558D15122355003DCB76 /* FlexArgs-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlexArgs-Prefix.pch"; sourceTree = "<group>"; };
 		2767558E15122355003DCB76 /* FlexArgs.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = FlexArgs.1; sourceTree = "<group>"; };
-		276755951512236C003DCB76 /* DNFlexArgs.h */ = {isa = PBXFileReference; fileEncoding = 4; path = DNFlexArgs.h; sourceTree = "<group>"; };
+		276755951512236C003DCB76 /* DNFlexArgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNFlexArgs.h; sourceTree = "<group>"; };
 		276755961512236C003DCB76 /* DNFlexArgs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNFlexArgs.m; sourceTree = "<group>"; };
 		276755A515122410003DCB76 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		276755B015122FF9003DCB76 /* FlexArgsTest.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlexArgsTest.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,10 +51,11 @@
 		276755B815122FF9003DCB76 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		276755BB15122FF9003DCB76 /* FlexArgsTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FlexArgsTest-Info.plist"; sourceTree = "<group>"; };
 		276755BD15122FF9003DCB76 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		276755BF15122FF9003DCB76 /* DNFlexArgsTest.h */ = {isa = PBXFileReference; path = DNFlexArgsTest.h; sourceTree = "<group>"; };
+		276755BF15122FF9003DCB76 /* DNFlexArgsTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNFlexArgsTest.h; sourceTree = "<group>"; };
 		276755C015122FF9003DCB76 /* DNFlexArgsTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNFlexArgsTest.m; sourceTree = "<group>"; };
 		276755C215122FF9003DCB76 /* FlexArgsTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlexArgsTest-Prefix.pch"; sourceTree = "<group>"; };
 		276755CA15123725003DCB76 /* libprofile_rt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libprofile_rt.dylib; path = Toolchains/XcodeDefault.xctoolchain/usr/lib/libprofile_rt.dylib; sourceTree = DEVELOPER_DIR; };
+		27E6844B151252A200898775 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.plist; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 		2767557815122355003DCB76 = {
 			isa = PBXGroup;
 			children = (
+				27E6844B151252A200898775 /* LICENSE */,
 				276755CA15123725003DCB76 /* libprofile_rt.dylib */,
 				276755A515122410003DCB76 /* README.md */,
 				2767558915122355003DCB76 /* FlexArgs */,
@@ -231,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				276755BE15122FF9003DCB76 /* InfoPlist.strings in Resources */,
+				27E6844C151252A200898775 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
