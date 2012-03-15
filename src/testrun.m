@@ -25,21 +25,28 @@ int main(int argc, char *argv[])
         NSLog(@"arg %d: %s\n", i, argv[i]);
 
     @autoreleasepool {
-        NSArray *testArgs = [NSArray arrayWithObjects:
-                                @"foo=bar",
-                                @"baz=1",
-                                @"quux=-2.5",
-                                @"spam=footastic",
-                                @"eggs=false", nil];
         FlexArgs *flexArgsCL = [[FlexArgs alloc] initParser:argv nargs:argc];
-        FlexArgs *flexArgsTA = [[FlexArgs alloc] initParserWithStringArray:testArgs];
         NSDictionary *argsCL = [flexArgsCL retrieveArgs];
         NSDictionary *argsTA = [flexArgsTA retrieveArgs];
 
+        FlexArgs *flexArgsCITA = [FlexArgs parserWithNSArray:testArgs];
+        NSDictionary *argsTA2 = [flexArgsCITA retrieveArgs];
+
         [argsCL writeToFile:@"resultsCL.txt" atomically:YES];
         [argsTA writeToFile:@"resultsTA.txt" atomically:YES];
+        assert([argsTA isEqualToDictionary:argsTA2]);
     
     }
     return 0;
 }
 
+BOOL test_init_with_NSArray()
+{
+    NSArray *testArgs = [NSArray arrayWithObjects:
+                            @"foo=bar",
+                            @"baz=1",
+                            @"quux=-2.5",
+                            @"spam=footastic",
+                            @"eggs=false", nil];
+    FlexArgs *flexArgsCL = [[FlexArgs alloc] initParser:argv nargs:argc];
+}
