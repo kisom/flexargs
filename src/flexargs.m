@@ -31,36 +31,46 @@
 
 -(void)addBooleanArg:(NSString *)key booleanArg:(NSString *)value
 {
-    NSNumber *bvalue = [[NSNumber alloc] initWithBool:[value boolValue]];
+    NSNumber *bvalue = [NSNumber numberWithBool:[value boolValue]];
     [args setValue:bvalue forKey:key];
 }
 
 -(void)addIntegerArg:(NSString *)key integerArg:(NSString *)value
 {
-    NSInteger *intValue;
+    NSNumber *intValue = [NSNumber numberWithLongLong:[value longLongValue]];
+    [args setValue:intValue forKey:key];
 }
 
--(void)addFloatArg:(NSString *)key floatArg:(NSDecimal *)value
+-(void)addFloatArg:(NSString *)key floatArg:(NSString *)value
 {
-    return;
+    NSNumber *floatValue = [NSNumber numberWithDouble:[value doubleValue]];
+    [args setValue:floatValue forKey:key];
 }
 
 -(void)addStringArg:(NSString *)key stringArg:(NSString *)value
 {
-    return;
+    [args setValue:value forKey:key];
 }
 
 -(NSString *)getType:(NSString *)value
 {
+    // if you don't check both scanInt and isAtEnd, scanInt will return true
+    // for floating-point values as well. Scan for integers first - otherwise,
+    // the float will pick them up.
+    NSScanner *intScanner = [NSScanner localizedScannerWithString:value];
+    NSScanner *hexIntScanner = [NSScanner localizedScannerWithString:value];
+
     if ((NSOrderedSame == [value localizedCaseInsensitiveCompare:@"true"]) ||
         (NSOrderedSame == [value localizedCaseInsensitiveCompare:@"false"]))
         return @"boolean";
-    else if ([[NSScanner localizedScannerWithString:value] scanInt:NULL])
+    else if (([intScanner scanInt:NULL]) && ([intScanner isAtEnd]))
+        return @"integer";
+    else if (([hexIntScanner scanHexLongLong:NULL]) && ([hexIntScanner isAtEnd]))
         return @"integer";
     else if ([[NSScanner localizedScannerWithString:value] scanDouble:NULL])
         return @"float";
     else 
-        return nil;
+        return @"string";
 }
 
 -(id)initParser:(char **)inargv nargs:(int)nargs
@@ -84,12 +94,16 @@
         NSArray *argval = [arg componentsSeparatedByString:@"="];
         NSString *key = [argval objectAtIndex:0];
         NSString *val = [argval objectAtIndex:1];
+        NSString *type = [self getType:val];
 
-        if (NSOrderedSame == [@"boolean" localizedCaseInsensitiveCompare:[self getType:val]])
+        NSLog(@"%@ key %@\n", type, key);
+        if (NSOrderedSame == [@"boolean" localizedCaseInsensitiveCompare:type])
             [self addBooleanArg:key booleanArg:val];
-        else if (NSOrderedSame == [@"integer" localizedCaseInsensitiveCompare:[self getType:val]])
+        else if (NSOrderedSame == [@"integer" localizedCaseInsensitiveCompare:type])
             [self addIntegerArg:key integerArg:val];
-        else
+        else if (NSOrderedSame == [@"float" localizedCaseInsensitiveCompare:type])
+            [self addFloatArg:key floatArg:val];
+        else if (NSOrderedSame == [@"string" localizedCaseInsensitiveCompare:type])
             [self addStringArg:key stringArg:val];
         --i;
     }
