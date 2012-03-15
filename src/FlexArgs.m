@@ -119,7 +119,7 @@
     return self;
 }
 
--(id)initParserWithStringArray:(NSArray *)inargv
+-(id)initParserWithNSArray:(NSArray *)inargv
 {
     self = [super init];
     if (!self)
@@ -138,4 +138,15 @@
     return [NSDictionary dictionaryWithDictionary:[self args]];
 }
 
++(id)parserWithArgv:(char **)inargv nargs:(int)nargs
+{
+    FlexArgs *flexArgs = [[FlexArgs alloc] initParser:inargv nargs:nargs];
+    return flexArgs;
+}
+
++(id)parserWithNSArray:(NSArray *)inargv
+{
+    FlexArgs *flexArgs = [[FlexArgs alloc] initParserWithNSArray:inargv];
+    return flexArgs;
+}
 @end

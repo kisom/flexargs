@@ -20,8 +20,10 @@
     int argc;
 }
 
++(id)parserWithArgv:(char **)inargv nargs:(int)nargs;
++(id)parserWithNSArray:(NSArray *)inargv;
 -(id)initParser:(char **)inargv nargs:(int)nargs;
--(id)initParserWithStringArray:(NSArray *)inargv;
+-(id)initParserWithNSArray:(NSArray *)inargv;
 -(NSDictionary *)retrieveArgs;
 
 @end
