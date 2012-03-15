@@ -15,13 +15,14 @@
 @interface FlexArgs() 
 
 @property (nonatomic, strong) NSMutableDictionary *args;
-@property char **argv;
+@property (nonatomic, strong) NSMutableArray *argv;
 @property int argc;
 
 -(void)addBooleanArg:(NSString *)key booleanArg:(NSString *)value;
 -(void)addIntegerArg:(NSString *)key integerArg:(NSString *)value;
 -(void)addFloatArg:(NSString *)key floatArg:(NSString *)value;
 -(void)addStringArg:(NSString *)key stringArg:(NSString *)value;
+-(void)parse;
 -(NSString *)getType:(NSString *)value;
 
 @end
@@ -60,8 +61,10 @@
     NSScanner *intScanner = [NSScanner localizedScannerWithString:value];
     NSScanner *hexIntScanner = [NSScanner localizedScannerWithString:value];
 
-    if ((NSOrderedSame == [value localizedCaseInsensitiveCompare:@"true"]) ||
-        (NSOrderedSame == [value localizedCaseInsensitiveCompare:@"false"]))
+    if (value == nil)
+        return @"nil";
+    else if ((NSOrderedSame == [value localizedCaseInsensitiveCompare:@"true"]) ||
+             (NSOrderedSame == [value localizedCaseInsensitiveCompare:@"false"]))
         return @"boolean";
     else if (([intScanner scanInt:NULL]) && ([intScanner isAtEnd]))
         return @"integer";
@@ -73,30 +76,16 @@
         return @"string";
 }
 
--(id)initParser:(char **)inargv nargs:(int)nargs
+-(void)parse
 {
-    int i = nargs;
+    int i = self.argc;
 
-    NSLog(@"-(id)initParser\n");
-
-    self = [super init];
-    if (!self)
-        return self;
-
-    self.argc = nargs;
-    self.argv = inargv;
-    args = [NSMutableDictionary dictionaryWithCapacity:(self.argc + 1)];
-
-    NSLog(@"i -> %d\n", i);
     while (i > 0) {
-        NSString *arg = [NSString stringWithUTF8String:self.argv[argc - i]];
-        NSLog(@"read arg: %@\n", arg);
-        NSArray *argval = [arg componentsSeparatedByString:@"="];
+        NSArray *argval = [[argv objectAtIndex:(self.argc - i)] componentsSeparatedByString:@"="];
         NSString *key = [argval objectAtIndex:0];
         NSString *val = [argval objectAtIndex:1];
         NSString *type = [self getType:val];
 
-        NSLog(@"%@ key %@\n", type, key);
         if (NSOrderedSame == [@"boolean" localizedCaseInsensitiveCompare:type])
             [self addBooleanArg:key booleanArg:val];
         else if (NSOrderedSame == [@"integer" localizedCaseInsensitiveCompare:type])
@@ -105,10 +94,44 @@
             [self addFloatArg:key floatArg:val];
         else if (NSOrderedSame == [@"string" localizedCaseInsensitiveCompare:type])
             [self addStringArg:key stringArg:val];
+
         --i;
     }
+}
+
+-(id)initParser:(char **)inargv nargs:(int)nargs
+{
+    int i = 0;
+
+    self = [super init];
+    if (!self)
+        return self;
+
+    self.argc = nargs;
+    self.argv = [NSMutableArray arrayWithCapacity:(self.argc + 1)];
+    while (i < nargs){
+        [self.argv addObject:[NSString stringWithUTF8String:inargv[i]]];
+        i++;
+    }
+
+    self.args = [NSMutableDictionary dictionaryWithCapacity:(self.argc + 1)];
+    [self parse];
 
     return self;
+}
+
+-(id)initParserWithStringArray:(NSArray *)inargv
+{
+    self = [super init];
+    if (!self)
+        return self;
+
+    self.argc = [inargv count];
+    self.argv = [NSArray arrayWithArray:inargv];
+    self.args = [NSMutableDictionary dictionaryWithCapacity:(self.argc + 1)];
+    [self parse];
+    return self;
+
 }
 
 -(NSDictionary *)retrieveArgs

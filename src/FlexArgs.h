@@ -21,7 +21,7 @@
 }
 
 -(id)initParser:(char **)inargv nargs:(int)nargs;
--(id)initParseWithStringArray:(NSArray *)inargv;
+-(id)initParserWithStringArray:(NSArray *)inargv;
 -(NSDictionary *)retrieveArgs;
 
 @end
