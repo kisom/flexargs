@@ -10,7 +10,8 @@ This is a library to flexibly parse arguments via the command line. It provides 
 parserWithArgv:nargs and parserWithNSArray, to take in command line options key=value pairs
 and return an NSDictionary with those values. 
 
-Example:
+## Example:
+
 ```objc
 
 #import <Foundation/Foundation.h>
@@ -32,6 +33,7 @@ int main(int argc, char *argv[])
 ```
 
 which might yield a session like:
+
 ```bash
 <voytek: ~/Code/flexargs> λ src/example foo=bar baz=234283492034 quux=-8123.1231
 24 spam='hello world' eggs=false
