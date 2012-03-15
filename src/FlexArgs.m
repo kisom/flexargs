@@ -10,7 +10,7 @@
 //  CLI test code.
 
 #import <Cocoa/Cocoa.h>
-#import "flexargs.h"
+#import "FlexArgs.h"
 
 @interface FlexArgs() 
 
