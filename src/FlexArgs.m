@@ -9,7 +9,6 @@
 //  Flexibly parse arguments - designed as a tool to aid in construction of
 //  CLI test code.
 
-#import <Cocoa/Cocoa.h>
 #import "FlexArgs.h"
 
 @interface FlexArgs() 
