@@ -9,6 +9,7 @@
 //  Flexibly parse arguments - designed as a tool to aid in construction of
 //  CLI test code.
 
+#import <Foundation/Foundation.h>
 @interface FlexArgs : NSObject
 {
     NSMutableDictionary *args;
@@ -18,7 +19,7 @@
     int argc;
 }
 
--(BOOL)initParser:(char **)argv nargs:(int)argc;
+-(id)initParser:(char **)inargv nargs:(int)nargs;
 -(NSDictionary *)retrieveArgs;
 
 @end
