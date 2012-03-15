@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
         argc--;     // skip the first arg, which contains the binary name
         argv++;
         
-        NSDictionary *argumentDict = [[FlexArgs parserWithArgv:argv nargs:argc] retrieveArgs];
+        NSDictionary *argumentDict = [[DNFlexArgs parserWithArgv:argv nargs:argc] retrieveArgs];
         NSLog(@"argumentDict = %@", argumentDict);
         [argumentDict writeToFile:@"argumentDict.plist" atomically:YES];
     }

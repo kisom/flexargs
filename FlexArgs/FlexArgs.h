@@ -11,7 +11,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface FlexArgs : NSObject
+@interface DNFlexArgs : NSObject
 {
     NSMutableDictionary *args;
 

@@ -11,7 +11,7 @@
 
 #import "FlexArgs.h"
 
-@interface FlexArgs() 
+@interface DNFlexArgs() 
 
 @property (nonatomic, strong) NSMutableDictionary *args;
 @property (nonatomic, strong) NSMutableArray *argv;
@@ -26,7 +26,7 @@
 
 @end
 
-@implementation FlexArgs
+@implementation DNFlexArgs
 @synthesize args, argc, argv;
 
 -(void)addBooleanArg:(NSString *)key booleanArg:(NSString *)value
@@ -146,13 +146,13 @@
 
 +(id)parserWithArgv:(char **)inargv nargs:(int)nargs
 {
-    FlexArgs *flexArgs = [[FlexArgs alloc] initParser:inargv nargs:nargs];
+    DNFlexArgs *flexArgs = [[DNFlexArgs alloc] initParser:inargv nargs:nargs];
     return flexArgs;
 }
 
 +(id)parserWithNSArray:(NSArray *)inargv
 {
-    FlexArgs *flexArgs = [[FlexArgs alloc] initParserWithNSArray:inargv];
+    DNFlexArgs *flexArgs = [[DNFlexArgs alloc] initParserWithNSArray:inargv];
     return flexArgs;
 }
 @end
