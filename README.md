@@ -25,7 +25,6 @@ int main(int argc, char *argv[])
 
         NSDictionary *argumentDict = [[FlexArgs parserWithArgv:argv nargs:argc] retrieveArgs];
         NSLog(@"argumentDict = %@", argumentDict);
-        [argumentDict writeToFile:@"argumentDict.plist" atomically:YES];
     }
 
     return 0;
@@ -44,22 +43,5 @@ which might yield a session like:
     quux = "-8123.123124";
     spam = "hello world";
 }
-<voytek: ~/Code/flexargs> λ cat argumentDict.plist
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-    <key>baz</key>
-    <integer>234283492034</integer>
-    <key>eggs</key>
-    <false/>
-    <key>foo</key>
-    <string>bar</string>
-    <key>quux</key>
-    <real>-8123.1231239999997</real>
-    <key>spam</key>
-    <string>hello world</string>
-</dict>
-</plist>
 <voytek: ~/Code/flexargs> λ 
 ```
