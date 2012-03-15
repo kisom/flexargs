@@ -16,11 +16,12 @@
     NSMutableDictionary *args;
 
     // C-style args to be loaded in
-    char **argv;
+    NSMutableArray *argv;
     int argc;
 }
 
 -(id)initParser:(char **)inargv nargs:(int)nargs;
+-(id)initParseWithStringArray:(NSArray *)inargv;
 -(NSDictionary *)retrieveArgs;
 
 @end
