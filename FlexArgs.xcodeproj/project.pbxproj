@@ -11,6 +11,13 @@
 		2767558B15122355003DCB76 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2767558A15122355003DCB76 /* main.m */; };
 		2767558F15122355003DCB76 /* FlexArgs.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2767558E15122355003DCB76 /* FlexArgs.1 */; };
 		276755971512236C003DCB76 /* FlexArgs.m in Sources */ = {isa = PBXBuildFile; fileRef = 276755961512236C003DCB76 /* FlexArgs.m */; };
+		276755B215122FF9003DCB76 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 276755B115122FF9003DCB76 /* SenTestingKit.framework */; };
+		276755B415122FF9003DCB76 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 276755B315122FF9003DCB76 /* Cocoa.framework */; };
+		276755BE15122FF9003DCB76 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 276755BC15122FF9003DCB76 /* InfoPlist.strings */; };
+		276755C115122FF9003DCB76 /* FlexArgsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 276755C015122FF9003DCB76 /* FlexArgsTest.m */; };
+		276755C91512328C003DCB76 /* FlexArgs.m in Sources */ = {isa = PBXBuildFile; fileRef = 276755961512236C003DCB76 /* FlexArgs.m */; };
+		276755CB15123725003DCB76 /* libprofile_rt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 276755CA15123725003DCB76 /* libprofile_rt.dylib */; };
+		276755CC151237B9003DCB76 /* libprofile_rt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 276755CA15123725003DCB76 /* libprofile_rt.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,6 +42,18 @@
 		276755951512236C003DCB76 /* FlexArgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlexArgs.h; sourceTree = "<group>"; };
 		276755961512236C003DCB76 /* FlexArgs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlexArgs.m; sourceTree = "<group>"; };
 		276755A515122410003DCB76 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		276755B015122FF9003DCB76 /* FlexArgsTest.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlexArgsTest.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		276755B115122FF9003DCB76 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		276755B315122FF9003DCB76 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		276755B615122FF9003DCB76 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		276755B715122FF9003DCB76 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		276755B815122FF9003DCB76 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		276755BB15122FF9003DCB76 /* FlexArgsTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FlexArgsTest-Info.plist"; sourceTree = "<group>"; };
+		276755BD15122FF9003DCB76 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		276755BF15122FF9003DCB76 /* FlexArgsTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlexArgsTest.h; sourceTree = "<group>"; };
+		276755C015122FF9003DCB76 /* FlexArgsTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlexArgsTest.m; sourceTree = "<group>"; };
+		276755C215122FF9003DCB76 /* FlexArgsTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlexArgsTest-Prefix.pch"; sourceTree = "<group>"; };
+		276755CA15123725003DCB76 /* libprofile_rt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libprofile_rt.dylib; path = Toolchains/XcodeDefault.xctoolchain/usr/lib/libprofile_rt.dylib; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +62,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				2767558815122355003DCB76 /* Foundation.framework in Frameworks */,
+				276755CB15123725003DCB76 /* libprofile_rt.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		276755AC15122FF9003DCB76 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				276755B215122FF9003DCB76 /* SenTestingKit.framework in Frameworks */,
+				276755B415122FF9003DCB76 /* Cocoa.framework in Frameworks */,
+				276755CC151237B9003DCB76 /* libprofile_rt.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,8 +82,10 @@
 		2767557815122355003DCB76 = {
 			isa = PBXGroup;
 			children = (
+				276755CA15123725003DCB76 /* libprofile_rt.dylib */,
 				276755A515122410003DCB76 /* README.md */,
 				2767558915122355003DCB76 /* FlexArgs */,
+				276755B915122FF9003DCB76 /* FlexArgsTest */,
 				2767558615122355003DCB76 /* Frameworks */,
 				2767558415122355003DCB76 /* Products */,
 			);
@@ -63,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				2767558315122355003DCB76 /* FlexArgs */,
+				276755B015122FF9003DCB76 /* FlexArgsTest.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -71,6 +104,9 @@
 			isa = PBXGroup;
 			children = (
 				2767558715122355003DCB76 /* Foundation.framework */,
+				276755B115122FF9003DCB76 /* SenTestingKit.framework */,
+				276755B315122FF9003DCB76 /* Cocoa.framework */,
+				276755B515122FF9003DCB76 /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -95,6 +131,36 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		276755B515122FF9003DCB76 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				276755B615122FF9003DCB76 /* AppKit.framework */,
+				276755B715122FF9003DCB76 /* CoreData.framework */,
+				276755B815122FF9003DCB76 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		276755B915122FF9003DCB76 /* FlexArgsTest */ = {
+			isa = PBXGroup;
+			children = (
+				276755BF15122FF9003DCB76 /* FlexArgsTest.h */,
+				276755C015122FF9003DCB76 /* FlexArgsTest.m */,
+				276755BA15122FF9003DCB76 /* Supporting Files */,
+			);
+			path = FlexArgsTest;
+			sourceTree = "<group>";
+		};
+		276755BA15122FF9003DCB76 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				276755BB15122FF9003DCB76 /* FlexArgsTest-Info.plist */,
+				276755BC15122FF9003DCB76 /* InfoPlist.strings */,
+				276755C215122FF9003DCB76 /* FlexArgsTest-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -114,6 +180,24 @@
 			productName = FlexArgs;
 			productReference = 2767558315122355003DCB76 /* FlexArgs */;
 			productType = "com.apple.product-type.tool";
+		};
+		276755AF15122FF9003DCB76 /* FlexArgsTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 276755C515122FF9003DCB76 /* Build configuration list for PBXNativeTarget "FlexArgsTest" */;
+			buildPhases = (
+				276755AB15122FF9003DCB76 /* Sources */,
+				276755AC15122FF9003DCB76 /* Frameworks */,
+				276755AD15122FF9003DCB76 /* Resources */,
+				276755AE15122FF9003DCB76 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlexArgsTest;
+			productName = FlexArgsTest;
+			productReference = 276755B015122FF9003DCB76 /* FlexArgsTest.octest */;
+			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -136,9 +220,37 @@
 			projectRoot = "";
 			targets = (
 				2767558215122355003DCB76 /* FlexArgs */,
+				276755AF15122FF9003DCB76 /* FlexArgsTest */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		276755AD15122FF9003DCB76 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				276755BE15122FF9003DCB76 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		276755AE15122FF9003DCB76 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2767557F15122355003DCB76 /* Sources */ = {
@@ -150,7 +262,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		276755AB15122FF9003DCB76 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				276755C91512328C003DCB76 /* FlexArgs.m in Sources */,
+				276755C115122FF9003DCB76 /* FlexArgsTest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		276755BC15122FF9003DCB76 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				276755BD15122FF9003DCB76 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		2767559015122355003DCB76 /* Debug */ = {
@@ -163,6 +295,8 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_GENERATE_TEST_COVERAGE_FILES = NO;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -190,6 +324,8 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_GENERATE_TEST_COVERAGE_FILES = NO;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -205,6 +341,10 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FlexArgs/FlexArgs-Prefix.pch";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -214,7 +354,47 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FlexArgs/FlexArgs-Prefix.pch";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		276755C315122FF9003DCB76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FlexArgsTest/FlexArgsTest-Prefix.pch";
+				INFOPLIST_FILE = "FlexArgsTest/FlexArgsTest-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		276755C415122FF9003DCB76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FlexArgsTest/FlexArgsTest-Prefix.pch";
+				INFOPLIST_FILE = "FlexArgsTest/FlexArgsTest-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
@@ -238,6 +418,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		276755C515122FF9003DCB76 /* Build configuration list for PBXNativeTarget "FlexArgsTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				276755C315122FF9003DCB76 /* Debug */,
+				276755C415122FF9003DCB76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

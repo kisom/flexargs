@@ -9,10 +9,20 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>FlexArgsTest.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>2767558215122355003DCB76</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>276755AF15122FF9003DCB76</key>
 		<dict>
 			<key>primary</key>
 			<true/>
