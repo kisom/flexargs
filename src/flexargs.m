@@ -18,35 +18,49 @@
 @property char **argv;
 @property int argc;
 
--(void)addBooleanArg:(NSString *)key booleanArg:(BOOL)boolArg;
--(void)addIntegerArg:(NSString *)key integerArg:(NSInteger *)intArg;
--(void)addFloatArg:(NSString *)key floatArt:(NSDecimal *)floatArg;
--(void)addStringArg:(NSString *)key stringArg:(NSString *)stringArg;
+-(void)addBooleanArg:(NSString *)key booleanArg:(NSString *)value;
+-(void)addIntegerArg:(NSString *)key integerArg:(NSString *)value;
+-(void)addFloatArg:(NSString *)key floatArg:(NSString *)value;
+-(void)addStringArg:(NSString *)key stringArg:(NSString *)value;
+-(NSString *)getType:(NSString *)value;
 
 @end
 
 @implementation FlexArgs
 @synthesize args, argc, argv;
 
--(void)addBooleanArg:(NSString *)key booleanArg:(BOOL)boolArg
+-(void)addBooleanArg:(NSString *)key booleanArg:(NSString *)value
 {
-    [[self args] setValue:boolArg forKey:key];
+    NSNumber *bvalue = [[NSNumber alloc] initWithBool:[value boolValue]];
+    [args setValue:bvalue forKey:key];
+}
+
+-(void)addIntegerArg:(NSString *)key integerArg:(NSString *)value
+{
+    NSInteger *intValue;
+}
+
+-(void)addFloatArg:(NSString *)key floatArg:(NSDecimal *)value
+{
     return;
 }
 
--(void)addIntegerArg:(NSString *)key integerArg:(NSInteger *)intArg
+-(void)addStringArg:(NSString *)key stringArg:(NSString *)value
 {
     return;
 }
 
--(void)addFloatArg:(NSString *)key floatArt:(NSDecimal *)floatArg
+-(NSString *)getType:(NSString *)value
 {
-    return;
-}
-
--(void)addStringArg:(NSString *)key stringArg:(NSString *)stringArg
-{
-    return;
+    if ((NSOrderedSame == [value localizedCaseInsensitiveCompare:@"true"]) ||
+        (NSOrderedSame == [value localizedCaseInsensitiveCompare:@"false"]))
+        return @"boolean";
+    else if ([[NSScanner localizedScannerWithString:value] scanInt:NULL])
+        return @"integer";
+    else if ([[NSScanner localizedScannerWithString:value] scanDouble:NULL])
+        return @"float";
+    else 
+        return nil;
 }
 
 -(id)initParser:(char **)inargv nargs:(int)nargs
@@ -71,9 +85,12 @@
         NSString *key = [argval objectAtIndex:0];
         NSString *val = [argval objectAtIndex:1];
 
-        if ((val == @"true") || (val == @"false"))
-            [self addBooleanArg:key booleanArg:[val boolValue]];
-
+        if (NSOrderedSame == [@"boolean" localizedCaseInsensitiveCompare:[self getType:val]])
+            [self addBooleanArg:key booleanArg:val];
+        else if (NSOrderedSame == [@"integer" localizedCaseInsensitiveCompare:[self getType:val]])
+            [self addIntegerArg:key integerArg:val];
+        else
+            [self addStringArg:key stringArg:val];
         --i;
     }
 
