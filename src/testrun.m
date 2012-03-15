@@ -9,6 +9,7 @@
 //  Driver to run tests in FlexArgsTests.
 
 #import <Foundation/Foundation.h>
+#import "FlexArgs.h"
 
 int main(int argc, char *argv[])
 {
