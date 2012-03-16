@@ -45,3 +45,10 @@ which might yield a session like:
 }
 <voytek: ~/Code/flexargs> λ 
 ```
+
+## Notes
+
+0. Overflowing a value sets it to LONG_LONG_MAX.
+0. A null byte in a string passed in will truncate the string. So, `foo\0=bar`
+will result in just `foo` being passed in. This is a result of how NSStrings
+are parsed.
