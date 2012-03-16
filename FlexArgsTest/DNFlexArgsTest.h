@@ -30,6 +30,9 @@
 #import "DNFlexArgs.h"
 #import <SenTestingKit/SenTestingKit.h>
 
+#include <stdlib.h>
+#include <string.h>
+
 @interface DNFlexArgsTest : SenTestCase
 
 @end
