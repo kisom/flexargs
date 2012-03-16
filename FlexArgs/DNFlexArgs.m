@@ -87,6 +87,9 @@
 
         if ([argval count] == 1) {
             val = @"true";
+        } else if ([argval count] > 2) {
+            NSRange range = NSMakeRange(1, [argval count] - 1);
+            val = [[argval subarrayWithRange:range] componentsJoinedByString:@"="];
         } else {
             val = [argval objectAtIndex:1];
         }
