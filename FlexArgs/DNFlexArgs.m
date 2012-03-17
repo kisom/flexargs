@@ -15,7 +15,7 @@
 
 @property (nonatomic, strong) NSMutableDictionary *args;
 @property (nonatomic, strong) NSMutableArray *argv;
-@property int argc;
+@property NSUInteger argc;
 
 -(void)addBooleanArg:(NSString *)key booleanArg:(NSString *)value;
 -(void)addIntegerArg:(NSString *)key integerArg:(NSString *)value;
