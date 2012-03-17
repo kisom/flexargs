@@ -16,8 +16,7 @@
 		276755BE15122FF9003DCB76 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 276755BC15122FF9003DCB76 /* InfoPlist.strings */; };
 		276755C115122FF9003DCB76 /* DNFlexArgsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 276755C015122FF9003DCB76 /* DNFlexArgsTest.m */; };
 		276755C91512328C003DCB76 /* DNFlexArgs.m in Sources */ = {isa = PBXBuildFile; fileRef = 276755961512236C003DCB76 /* DNFlexArgs.m */; };
-		276755CB15123725003DCB76 /* libprofile_rt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 276755CA15123725003DCB76 /* libprofile_rt.dylib */; };
-		276755CC151237B9003DCB76 /* libprofile_rt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 276755CA15123725003DCB76 /* libprofile_rt.dylib */; };
+		27BE07D715147435007829C6 /* libprofile_rt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BE07D615147435007829C6 /* libprofile_rt.dylib */; };
 		27E6844C151252A200898775 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 27E6844B151252A200898775 /* LICENSE */; };
 /* End PBXBuildFile section */
 
@@ -54,7 +53,7 @@
 		276755BF15122FF9003DCB76 /* DNFlexArgsTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNFlexArgsTest.h; sourceTree = "<group>"; };
 		276755C015122FF9003DCB76 /* DNFlexArgsTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNFlexArgsTest.m; sourceTree = "<group>"; };
 		276755C215122FF9003DCB76 /* FlexArgsTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlexArgsTest-Prefix.pch"; sourceTree = "<group>"; };
-		276755CA15123725003DCB76 /* libprofile_rt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libprofile_rt.dylib; path = Toolchains/XcodeDefault.xctoolchain/usr/lib/libprofile_rt.dylib; sourceTree = DEVELOPER_DIR; };
+		27BE07D615147435007829C6 /* libprofile_rt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libprofile_rt.dylib; path = usr/lib/libprofile_rt.dylib; sourceTree = DEVELOPER_DIR; };
 		27E6844B151252A200898775 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.plist; };
 /* End PBXFileReference section */
 
@@ -63,8 +62,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27BE07D715147435007829C6 /* libprofile_rt.dylib in Frameworks */,
 				2767558815122355003DCB76 /* Foundation.framework in Frameworks */,
-				276755CB15123725003DCB76 /* libprofile_rt.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,7 +73,6 @@
 			files = (
 				276755B215122FF9003DCB76 /* SenTestingKit.framework in Frameworks */,
 				276755B415122FF9003DCB76 /* Cocoa.framework in Frameworks */,
-				276755CC151237B9003DCB76 /* libprofile_rt.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,8 +82,8 @@
 		2767557815122355003DCB76 = {
 			isa = PBXGroup;
 			children = (
+				27BE07D615147435007829C6 /* libprofile_rt.dylib */,
 				27E6844B151252A200898775 /* LICENSE */,
-				276755CA15123725003DCB76 /* libprofile_rt.dylib */,
 				276755A515122410003DCB76 /* README.md */,
 				2767558915122355003DCB76 /* FlexArgs */,
 				276755B915122FF9003DCB76 /* FlexArgsTest */,
@@ -312,7 +310,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
@@ -335,7 +333,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -348,6 +346,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib\"",
+					"\"$(DEVELOPER_DIR)/usr/lib\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -361,6 +360,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib\"",
+					"\"$(DEVELOPER_DIR)/usr/lib\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

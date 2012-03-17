@@ -39,7 +39,7 @@
 
     // C-style args to be loaded in
     NSMutableArray *argv;
-    int argc;
+    NSUInteger argc;
 }
 
 +(id)parserWithArgv:(char **)inargv nargs:(int)nargs;
