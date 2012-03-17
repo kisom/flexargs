@@ -17,7 +17,6 @@ int main(int argc, char *argv[])
         argc--;     // skip the first arg, which contains the binary name
         argv++;
         
-        //NSNumber *num = [NSNumber numberWithInt:98765432109876543210ULL];
         NSDictionary *argumentDict = [[DNFlexArgs parserWithArgv:argv nargs:argc] retrieveArgs];
         NSLog(@"argumentDict = %@", argumentDict);
     }
